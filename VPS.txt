@@ -1,0 +1,47 @@
+Terminal : 
+Create root password : 
+Your VPS hostname : 
+
+//update
+apt update
+
+// install nodejs
+apt install nodejs
+
+//install nvm
+curl https://raw.githubusercontent.com/creationix/nvm/v0.11.1/install.sh | bash
+source ~/.profile
+nvm ls-remote
+nvm install v20.5.1
+@pilih terbaru
+
+//install git
+apt-get install git
+git -v
+
+//install pm2
+npm install pm2 -g
+
+//install serve
+npm install -g serve
+
+//clone repository
+mkdir repo
+cd repo
+
+
+// npm install
+npm install
+
+// build
+npm run build
+
+//run pm2 
+pm2 start npx --name platinum -- serve -s dist -l 3000
+
+//allow port ufw
+sudo ufw enable
+sudo ufw allow 3000
+sudo ufw status
+
+sudo lsof -i :3000
